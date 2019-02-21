@@ -1,0 +1,1 @@
+{"virtualbox":{"/var/www/werewolf":{"mount_options":["dmode=777","fmode=777","uid=0","gid=0"],"guestpath":"/var/www/werewolf","hostpath":"C:/proseeds/workspace/werewolf","disabled":false,"__vagrantfile":true}}}
