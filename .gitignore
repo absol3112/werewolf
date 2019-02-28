@@ -1,0 +1,50 @@
+# phpstorm project files
+.idea
+*.iml
+# netbeans project files
+nbproject
+
+# zend studio for eclipse project files
+.buildpath
+.project
+.settings
+
+# windows thumbnail cache
+Thumbs.db
+
+# eclipse conf files
+.metadata
+
+# composer vendor dir
+/vendor
+
+# vagrant files
+/vm
+/.vagrant
+
+# composer itself is not needed
+composer.phar
+
+# Mac DS_Store Files
+.DS_Store
+
+# phpunit itself is not needed
+phpunit.phar
+# local phpunit config
+/phpunit.xml
+
+#temp files
+.swp
+.un~
+.*~
+
+#chef cookbooks
+/cookbooks
+
+#ansible cash
+provision/site.retry
+
+tests/_output/*
+tests/codeception/fixtures/data/common/*
+uploads/*
+!.gitkeep
