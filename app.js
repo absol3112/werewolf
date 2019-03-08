@@ -11,7 +11,7 @@ var httpServer = http.createServer(app);
 
 let PORT = process.env.PORT || 80;
 
-app.post('/',function(req, res){
+app.get('/',function(req, res){
     console.log('worked');
     res.status(200).send();
 });
