@@ -13,7 +13,7 @@ let PORT = process.env.PORT || 80;
 
 app.post('/',function(req, res){
     console.log('worked');
-    res.status(200).end();
+    res.status(200).send();
 });
 
 httpServer.listen(PORT, () => console.log('Running!!! Listenning on ' + PORT));
