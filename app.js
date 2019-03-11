@@ -11,8 +11,10 @@ var httpServer = http.createServer(app);
 
 let PORT = process.env.PORT || 80;
 
+let discordApiUrl = process.env.DISCORD_SEVER_ID || 'https://discordapp.com/api';
+
 app.get('/',function(req, res){
-    console.log(process.env.DISCORD_SEVER_ID);
+    console.log(discordApiUrl);
     res.status(200).send();
 });
 
