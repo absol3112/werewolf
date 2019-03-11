@@ -33,10 +33,10 @@ app.get('/',function(req, res){
             'code': code,
             'redirect_uri': 'https://discord-werewolf-31121994.herokuapp.com/',
             'scope': 'identify email connections'
-        }
+        },
         headers : {
             'Content-Type': 'application/x-www-form-urlencoded'
-        }
+        },
     };
     request.post(options, function(error, response, body){
       console.log(body);
