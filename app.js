@@ -13,8 +13,16 @@ let PORT = process.env.PORT || 80;
 
 let discordApiUrl = process.env.DISCORD_API_URL || 'https://discordapp.com/api';
 
+let discordServerId = process.env.DISCORD_SEVER_ID || '545425833351839771';
+
 app.get('/',function(req, res){
-    console.log(discordApiUrl);
+
+    res.status(200).send();
+});
+
+app.get(discordApiUrl + '/users/@me',function(req, res){
+    // var url = discordApiUrl + '/users/@me';
+    console.log(res);
     res.status(200).send();
 });
 
