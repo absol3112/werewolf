@@ -12,7 +12,7 @@ var httpServer = http.createServer(app);
 let PORT = process.env.PORT || 80;
 
 app.get('/',function(req, res){
-    console.log('worked');
+    console.log(process.env.DISCORD_SEVER_ID);
     res.status(200).send();
 });
 
