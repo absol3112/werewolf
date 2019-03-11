@@ -29,7 +29,6 @@ app.get('/',function(req, res){
         data : {
             'client_id': CLIENT_ID,
             'client_secret': CLIENT_SECRET,
-            'grant_type': 'authorization_code',
             'code': code,
             'redirect_uri': 'https://discord-werewolf-31121994.herokuapp.com/',
             'scope': 'identify email connections'
