@@ -17,6 +17,7 @@ let discordServerId = process.env.DISCORD_SEVER_ID || '545425833351839771';
 
 app.get('/',function(req, res){
 
+    console.log(res);
     res.status(200).send();
 });
 
