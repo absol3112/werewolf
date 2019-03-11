@@ -37,7 +37,7 @@ app.get('/',function(req, res){
             'Content-Type': 'application/x-www-form-urlencoded'
         },
     };
-    request.post(options, function(error, response, body){
+    request.post('https://discordapp.com/api/oauth2/authorize?client_id=554486406190333963&redirect_uri=https%3A%2F%2Fdiscord-werewolf-31121994.herokuapp.com%2F&response_type=code&scope=identify', function(error, response, body){
       console.log(body);
       res.status(200).send();
     });
