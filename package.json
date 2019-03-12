@@ -10,9 +10,11 @@
   "author": "Absol",
   "license": "ISC",
   "dependencies": {
+    "discord.io": "^2.5.3",
     "express": "*",
     "mysql": "*",
+    "request": "*",
     "socket.io": "^2.1.1",
-    "request": "*"
+    "winston": "^3.2.1"
   }
 }

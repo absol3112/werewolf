@@ -1,48 +1,28 @@
-/**
- * Created by absol3112 on 2019/02/28.
- */
-let express = require('express');
-
-let http = require('http');
-
-var app = express();
-
-const request = require('request');
-
-var httpServer = http.createServer(app);
-
-let PORT = process.env.PORT || 80;
-
-let discordApiUrl = process.env.DISCORD_API_URL || 'https://discordapp.com/api/v6';
-
-let discordServerId = process.env.DISCORD_SEVER_ID || '545425833351839771';
-
-const CLIENT_ID = '554486406190333963';
-
-const CLIENT_SECRET = 'mq4taSG_zO04d87vE5UrSJcK9HezzFbo';
-
-app.get('/',function(req, res){
-    var code = req.query.code;
-    // exchange_code(code);
-    options = {
-        url: discordApiUrl +'/oauth2/token',
-        data : {
-            'client_id': CLIENT_ID,
-            'client_secret': CLIENT_SECRET,
-            'code': code,
-            'redirect_uri': 'https://discord-werewolf-31121994.herokuapp.com/',
-            'scope': 'identify email connections'
-        },
-        headers : {
-            'Content-Type': 'application/x-www-form-urlencoded'
-        },
-    };
-    request.post('https://discordapp.com/api/oauth2/authorize?client_id=554486406190333963&redirect_uri=https%3A%2F%2Fdiscord-werewolf-31121994.herokuapp.com%2F&response_type=code&scope=identify', function(error, response, body){
-      console.log(body);
-      res.status(200).send();
-    });
-    
+var Discord = require('discord.io');
+var logger = require('winston');
+var auth = require('./auth.json');
+// Configure logger settings
+logger.remove(logger.transports.Console);
+logger.add(new logger.transports.Console, {
+    colorize: true
+});
+logger.level = 'debug';
+console.log(auth.token);
+// Initialize Discord Bot
+var bot = new Discord.Client({
+    token: auth.token,
+    autorun: true
+});
+console.log(bot);
+bot.on('ready', function() {
+    console.log('Logged in as %s - %s\n', bot.username, bot.id);
 });
 
-
-httpServer.listen(PORT, () => console.log('Running!!! Listenning on ' + PORT));
+bot.on('message', function(user, userID, channelID, message, event) {
+    if (message === "ping") {
+        bot.sendMessage({
+            to: channelID,
+            message: "pong"
+        });
+    }
+});
