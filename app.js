@@ -9,6 +9,8 @@ var app = express();
 
 const request = require('request');
 
+var Discord = require('discord.io');
+
 var httpServer = http.createServer(app);
 
 let PORT = process.env.PORT || 80;
